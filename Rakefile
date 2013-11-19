@@ -1,9 +1,18 @@
-file "index.html" => "index.haml"
-file "style.css"  => "style.scss"
-file "script.js"  => "script.coffee"
+require 'rake/clean'
 
-task default: FileList[ "index.html", "js/script.js", "css/style.css" ]
+CLOBBER << FileList['index.html', 'application.js', 'application.css']
 
-rule(".css" => ".scss")  { |t| system "sass --scss #{t.source} #{t.name}" }
-rule(".js" => ".coffee") { |t| system "coffee -c #{t.source}" }
-rule(".html" => ".haml") { |t| system "haml #{t.source} #{t.name}" }
+file "index.html" => "index.haml" do |t|
+  system "haml index.haml index.html"
+end
+
+file "application.css" => FileList["css/*.{css,scss}"] do |t|
+  system "sass css/application.scss application.css"
+end
+
+file "application.js"  => FileList["js/*.{js,coffee}"] do
+  system "coffee -c js/*.coffee"
+  system "cat js/modernizr.js js/jquery.js js/application.js > application.js"
+end
+
+task default: FileList[ "index.html", "application.js", "application.css" ]

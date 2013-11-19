@@ -1,108 +1,143 @@
 !!! 5
-%html.no-js{:lang => "en"}
+%html.no-js(lang="en")
 
-    %head
+  %head
 
-        %meta{:charset => "utf-8"}
+    %meta(charset="utf-8")
 
-        %title Robert Liethof
-        %meta(name="description" content="Robert Liethof - voice and movement training")
-        %meta(name="keywords" content="voice movement training Berlin Amsterdam")
-        %meta(name="author" content="Robert Liethof")
+    %title Robert Liethof
+    %meta(name="description" content="Robert Liethof - voice and movement training")
+    %meta(name="keywords" content="voice movement training Berlin Amsterdam")
+    %meta(name="author" content="Robert Liethof")
 
-        %meta(name="viewport" content="width=device-width initial-scale=1")
-        %meta(name="HandheldFriendly" content="True")
-        %meta(name="MobileOptimized" content="320")
+    %meta(name="viewport" content="width=device-width initial-scale=1")
+    %meta(name="HandheldFriendly" content="True")
+    %meta(name="MobileOptimized" content="320")
 
-        %meta(name="apple-mobile-web-app-capable" content="yes")
-        %meta(name="apple-mobile-web-app-status-bar-style" content="black")
-        %link(rel="apple-touch-startup-image" href="img/touch/startup.png")
+    %meta(name="apple-mobile-web-app-capable" content="yes")
+    %meta(name="apple-mobile-web-app-status-bar-style" content="black")
+    %link(rel="apple-touch-startup-image" href="img/touch/startup.png")
 
-        %link(rel="alternate" type="application/rss+xml" title="RSS" href="index.rss")
+    %link(rel="alternate" type="application/rss+xml" title="RSS" href="index.rss")
 
-        %link(href="img/favicon.ico" rel="shortcut icon")
+    %link(href="img/favicon.ico" rel="shortcut icon")
 
-        -# iPad 3 Retina Display
-        %link(rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png")
-        -# iPhone 4 Retina display
-        %link(rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch/apple-touch-icon-114x114-precomposed.png")
-        -# iPad non-Retina display
-        %link(rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch/apple-touch-icon-72x72-precomposed.png")
-        -# Non-Retina iPhone, iPod Touch, Android 2.1+
-        %link(rel="apple-touch-icon-precomposed" href="img/touch/apple-touch-icon-57x57-precomposed.png")
+    -# iPad 3 Retina Display
+    %link(rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png")
+    -# iPhone 4 Retina display
+    %link(rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch/apple-touch-icon-114x114-precomposed.png")
+    -# iPad non-Retina display
+    %link(rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch/apple-touch-icon-72x72-precomposed.png")
+    -# Non-Retina iPhone, iPod Touch, Android 2.1+
+    %link(rel="apple-touch-icon-precomposed" href="img/touch/apple-touch-icon-57x57-precomposed.png")
+    -# Nokia
+    %link(rel="shortcut icon" href="img/touch/apple-touch-icon.png")
 
-        -# Nokia
-        %link(rel="shortcut icon" href="img/touch/apple-touch-icon.png")
+    -# CSS
+    -# ==========================================================================
 
-        -# CSS
-        -# ==========================================================================
+    %link(rel="stylesheet" href='http://fonts.googleapis.com/css?family=Arvo|Damion|Ubuntu|Ubuntu+Condensed' rel='stylesheet')
+    %link(rel="stylesheet" href="application.css")
 
-        %link(rel="stylesheet" href="css/base.css")
-        %link(rel="stylesheet" media="only screen and (min-width: 45em)" href="css/widescreen.css")
+  %body
+    -# ==========================================================================
+    -# Content
+    -# ==========================================================================
 
-        -# IE Fixes
-        -# ==========================================================================
+    %header#top
+      %a(href='#home')
+        %h1 Rob Liethof
+        %h2 Voice and Movement Training
 
-        -#
-        -# Use HTML5 Shim polyfill if not using Modernizr
-        -# Compiled IE stylesheets for legacy IE "Mobile first" support (using SASS)
-        -# nicolasgallagher.com/mobile-first-css-sass-and-ie/
-        -#
+    %nav#nav
+      %ul
+        %li
+          %a(href="#movement") Movement
+          %a(href="#voice") Voice
+          %a(href="#research") Research
+          %a(href="#contact") Contact
 
-        -# /[if (lt IE 9) & (!IEMobile)]
-            -# %script{:src => "//html5shim.googlecode.com/svn/trunk/html5.js"}
-            %script{:src => "/js/libs/selectivizr.min.js"}
-            -# %link{:rel => "stylesheet" :href => "css/oldie.css"}
-            -# %link{:rel => "stylesheet" :href => "css/ie8.css"}
+    #container
+      %section#home
+        :markdown
+          # Welcome
 
-        -# [if (lt IE 8) & (!IEMobile)]
-            %link{:rel => "stylesheet" :href => "css/ie7.css"}
+          Robert Liethoff is an actor, director and voice movement teacher from
+          the Netherlands After finishing his acting school (degree in 2005
+          Acting Studio The Hague) he moved to Berlin and expanded his studies
+          in the field of dance and choreography.
 
-        -# [if IE 6 & (!IEMobile)]
-            %link{:rel => "stylesheet" :href => "css/ie6.css"}
+          From 2007 until recently he has been studying and working at the
+          Lichtenberg Institute for advanced study in applied physiology of the
+          voice.
+ 
+          His work draws on the aspects of voice physiology as a departure point
+          for the development of sound-oriented body work. Can our voice unfold
+          into a warm, sound-enriched and effortless energetic instrument?
+   
+          Using an interdisciplinary approach to the voice he has been teaching
+          and working with classical singers, choirs / bands, actors /
+          performers in the Netherlands, Germany and Mexico over the past few
+          years. He is currently collaborating with DJ’s and sound composers in
+          Berlin and Amsterdam brainstorming new modalities of listening and
+          composing electronic music through an acoustic experience of the body.
 
-        -# JS
-        -# ==========================================================================
+      %section#movement
+        :markdown
+          # Movement training for actors
 
-        -# Typekit - change XXXXXXX to be your site's Typekit Kit ID
+          Coming soon...
 
-        -# %script{:src => "http://use.typekit.com/XXXXXXX.js"}
-        -# :javascript
-            try{Typekit.load();}catch(e){}
+      %section#voice
+        :markdown
+          # Voice training for singers
 
-        -# Modernizr
+          ## The body as a sound system.
+           
+          Do we know what voice is? How do voice and body interact during the
+          act of singing, making sounds and speaking? Can we perceive ourselves
+          as playable instruments where voice and physicality enhance each
+          other?
+           
+          This work is based on the method from the Lichtenberger Institute for
+          Applied Physiology of the Voice. It draws considerable attention to an
+          understanding of the sensory relationship between nervous system and
+          the sound of the voice, as well to a healthy vocal functioning.
 
-        -# %script{:src => "/js/libs/modernizr.custom.js"}
+          Through preparing the body for a state of receptivity we will
+          delicately establish contact with our inner ears and our larynx while
+          awakening the deeper tissues of the vocal chords. Perceiving and
+          listening instead of expressing outwardly - tuning in, not out - will
+          play a major role in this process. We’ll seek the minimum amount of
+          energy needed for a fine oscillation to be present in our tone.
+           
+          Can we play with the idea that a tone starts 'as a spark' in between
+          our ears?  Can we learn to trust the higher frequencies of the
+          overtones to enrich the quality of our sound? How efficient can we
+          become? In short: instead of using exercises to control the voice we
+          focus on how to be guided by sound sensory perception.
+           
+          We could see this practice as a space for inquiry. Therefore essential
+          are: patience, openness and willingness to let go of the urge to
+          achieve something. 
+      
+      %section#research
+        :markdown
+          # Research Topics
 
-    %body
+          Coming soon...
 
-        -# ==========================================================================
-        -# Content
-        -# ==========================================================================
 
-        -# = yield
+      %section#contact
+        :markdown
+          # Contact
 
-        -# JS
-        -# ==========================================================================
+          You can get in touch [via email](mailto:robliethof@gmail.com?subject=I would like more information)
 
-        -# jQuery
+          ![Rob Liethof](img/robliethof.jpg)
 
-        -# %script{:src => "//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"}
-        -# :javascript
-            window.jQuery || document.write('<script src="/js/jquery-1.7.2.min.js"><\/script>')
+    -# JS
+    -# ==========================================================================
 
-        -# Custom JS
-
-        -# %script{:src => "/js/app.js"}
-
-        -#
-        -# Asynchronous Google Analytics
-        -# Change UA-XXXXX-X to be your site's ID
-        -# mathiasbynens.be/notes/async-analytics-snippet
-        -#
-
-        -# :javascript
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
+    -# jQuery
+    %script(src="application.js")

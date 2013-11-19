@@ -1,0 +1,7 @@
+source "https://rubygems.org"
+gem "rack"
+gem "rake"
+gem "redcarpet"
+gem "haml"
+gem "sass"
+gem "coffee-script"

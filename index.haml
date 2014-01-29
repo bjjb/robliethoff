@@ -22,28 +22,135 @@
 
     %link(href="img/favicon.ico" rel="shortcut icon")
 
-    -# iPad 3 Retina Display
     %link(rel="apple-touch-icon-precomposed" sizes="144x144" href="img/touch/apple-touch-icon-144x144-precomposed.png")
-    -# iPhone 4 Retina display
     %link(rel="apple-touch-icon-precomposed" sizes="114x114" href="img/touch/apple-touch-icon-114x114-precomposed.png")
-    -# iPad non-Retina display
     %link(rel="apple-touch-icon-precomposed" sizes="72x72" href="img/touch/apple-touch-icon-72x72-precomposed.png")
-    -# Non-Retina iPhone, iPod Touch, Android 2.1+
     %link(rel="apple-touch-icon-precomposed" href="img/touch/apple-touch-icon-57x57-precomposed.png")
-    -# Nokia
     %link(rel="shortcut icon" href="img/touch/apple-touch-icon.png")
 
-    -# CSS
-    -# ==========================================================================
-
     %link(rel="stylesheet" href='http://fonts.googleapis.com/css?family=Arvo|Damion|Ubuntu|Ubuntu+Condensed' rel='stylesheet')
-    %link(rel="stylesheet" href="application.css")
+
+    %style
+      :scss
+        @import 'lib/bourbon/bourbon';
+        @import 'lib/skeleton.css';
+        @import 'lib/reset';
+
+        html { height: 100%; }
+        body {
+          height: 100%;
+          font-family: 'Arvo', serif;
+          padding: 1em;
+          background-color: rgba(white, 0.5);
+          color: #888;
+        }
+        h1,h2,h3,h4,h5,h6 {
+          font-family: 'Ubuntu', sans-serif;
+          font-weight: bold;
+        }
+        h1 { font-size: golden-ratio(1em, 1); }
+
+        p {
+          line-height: golden-ratio(1em, 1);
+          margin-top: golden-ratio(1em, 2);
+          margin-bottom: golden-ratio(1em, 2);
+          text-align: justify;
+        }
+
+        header {
+          a {
+            display: block;
+            color: inherit;
+            outline: none;
+            &:hover { color: inherit; text-decoration: none; }
+            &:active { color: inherit; outline: none; }
+            text-decoration: none;
+          }
+          h1 {
+            font-family: 'Damion', cursive;
+            margin-bottom: 0;
+          }
+          h2 {
+            font-family: 'Ubuntu Condensed', sans-serif;
+            color: #ccc;
+            letter-spacing: -0.1em;
+            margin-bottom: 0;
+          }
+          text-align: center;
+          margin-bottom: 1em;
+        }
+
+        nav {
+          font-family: 'Ubuntu Condensed', sans-serif;
+          padding-top: 1em;
+          border-top: 1px dotted #ccc;
+          padding-bottom: 1em;
+          ul {
+            list-style: none;
+            margin: 0;
+            text-align: center;
+            padding: 0;
+            li {
+              display: inline-block;
+              margin: 0;
+              a {
+                color: #aaf;
+                @include transition(color 0.2s linear);
+                text-decoration: none;
+                &:hover { color: #88f; }
+
+                @include hide-text;
+                display: inline-block;
+                height: 40px;
+                width: 40px;
+                background-size: cover;
+
+                &[href='#movement']      { background-image: url('img/movement.svg'); }
+                &[href='#voice']         { background-image: url('img/voice.svg'); }
+                &[href='#collaboration'] { background-image: url('img/collaboration.svg'); }
+                &[href='#contact']       { background-image: url('img/contact.svg'); }
+              }
+            }
+          }
+        }
+        #voice { } 
+        section {
+          border-top: 1px dotted #ccc;
+          h1 {
+            margin-top: golden-ratio(1em, -1);
+          }
+          h2 {
+            color: #ccc;
+            text-align: right;
+            font-style: italic;
+          }
+          &:target {
+            color: #666;
+          }
+        }
+
+        @media screen and (min-width: 720px) {
+          body {
+            max-width: 700px;
+            margin: auto;
+          }
+          p {
+            margin-left: golden-ratio(1em, 2);
+            margin-right: golden-ratio(1em, 2);
+          }
+
+          section {
+            &:target { color: inherit; }
+            &:hover { color: #666; }
+          }
+        }
+
+    %script(src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")
+    %script(type="text/javascript")
+      :coffee
+        $ -> alert("Under construction...")
 
   %body
-    -# ==========================================================================
-    -# Content
-    -# ==========================================================================
-
     %header#top
       %a(href='#home')
         %h1 Rob Liethoff
@@ -52,9 +159,12 @@
     %nav#nav
       %ul
         %li
-          %a(href="#movement") Movement
           %a(href="#voice") Voice
-          %a(href="#research") Research
+        %li
+          %a(href="#movement") Movement
+        %li
+          %a(href="#collaboration") Research
+        %li
           %a(href="#contact") Contact
 
     #container
@@ -82,15 +192,9 @@
           Berlin and Amsterdam brainstorming new modalities of listening and
           composing electronic music through an acoustic experience of the body.
 
-      %section#movement
-        :markdown
-          # Movement training for actors
-
-          Coming soon...
-
       %section#voice
         :markdown
-          # Voice training for singers
+          # Vocal training
 
           ## The body as a sound system.
            
@@ -120,10 +224,17 @@
           We could see this practice as a space for inquiry. Therefore essential
           are: patience, openness and willingness to let go of the urge to
           achieve something. 
-      
-      %section#research
+
+      %section#movement
         :markdown
-          # Research Topics
+          # Movement training
+
+          Coming soon...
+
+      
+      %section#collaboration
+        :markdown
+          # Collaboration
 
           Coming soon...
 
@@ -132,12 +243,8 @@
         :markdown
           # Contact
 
-          You can get in touch [via email](mailto:rliethoff@gmail.com?subject=I would like more information)
+          You can get in touch [via email](mailto:rliethoff@gmail.com?subject=I would like more information).
 
           ![Rob Liethof](img/rliethoff.jpg)
 
-    -# JS
-    -# ==========================================================================
-
-    -# jQuery
-    %script(src="application.js")
+          [Curriculum Vitae](/cv.pdf)

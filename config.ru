@@ -1,3 +1,15 @@
-require 'rack/static'
-use Rack::Static, urls: [""], index: "index.html"
-run lambda { |env| [200, { 'Content-Type' => 'text/html' }, File.open("index.html") ] }
+require 'sinatra'
+
+get '/' do
+  haml :index
+end
+
+get '/application.css' do
+  scss :application
+end
+
+get '/application.js' do
+  coffee :application
+end
+
+run Sinatra::Application

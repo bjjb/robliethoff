@@ -1,5 +1,15 @@
-@import 'css/bourbon/bourbon';
-@import 'css/reset';
+@import '../lib/bourbon/bourbon';
+@import '../lib/skeleton';
+@import '../css/reset';
+
+@mixin icon($name) {
+  @include hide-text;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-image: url("img/#{$name}.svg");
+  background-size: cover;
+}
 
 html {
   height: 100%;
@@ -29,6 +39,11 @@ a {
   &:hover {
     color: #88f;
   }
+
+  &[href='#movement'] { @include icon('movement'); }
+  &[href='#voice'] { @include icon('voice'); }
+  &[href='#collaboration'] { @include icon('collaboration'); }
+  &[href='#contact'] { @include icon('contact'); }
 }
 
 p {
@@ -76,12 +91,10 @@ nav {
     text-align: center;
     padding: 0;
     li {
-      display: block;
+      display: inline-block;
       margin: 0;
       a {
         color: inherit;
-        padding: 1em;
-        line-height: 2em;
       }
     }
   }

@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-gem "rack"
+gem "sinatra"
 gem "rake"
 gem "redcarpet"
 gem "haml"

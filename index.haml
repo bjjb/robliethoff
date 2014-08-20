@@ -55,6 +55,11 @@
           margin-top: golden-ratio(1em, 2);
           margin-bottom: golden-ratio(1em, 2);
           text-align: justify;
+          img {
+            float: left;
+            max-width: 40%;
+            padding: 0 1em 1em 0;
+          }
         }
 
         ul {
@@ -118,6 +123,8 @@
           }
         }
         #voice { } 
+        #collaboration {
+        }
         #links {
           ul {
             li {
@@ -160,6 +167,7 @@
           }
 
           @mixin portrait {
+            float: none;
             max-width: 50%;
             display: block;
             margin: auto;
@@ -198,9 +206,8 @@
           # Welcome
 
           Robert Liethoff is an actor, director and voice movement teacher from
-          the Netherlands After finishing his acting school (degree in 2005
-          Acting Studio The Hague) he moved to Berlin and expanded his studies
-          in the field of dance and choreography.
+          the Netherlands After finishing his acting school he moved to Berlin
+          and expanded his studies in the field of dance and choreography.
 
           From 2007 until recently he has been studying and working at the
           Lichtenberg Institute for advanced study in applied physiology of the
@@ -260,6 +267,7 @@
       %section#collaboration
         :markdown
           # Collaboration
+
 
           ## "Home"
 

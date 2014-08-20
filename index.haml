@@ -151,6 +151,17 @@
           }
         }
 
+        @mixin portrait {
+          float: none;
+          max-width: 50%;
+          display: block;
+          margin: auto;
+        }
+
+        #contact img {
+          @include portrait;
+        }
+
         @media screen and (min-width: 720px) {
           body {
             max-width: 700px;
@@ -166,16 +177,6 @@
             &:hover { color: #666; }
           }
 
-          @mixin portrait {
-            float: none !important;
-            max-width: 50%;
-            display: block;
-            margin: auto;
-          }
-
-          #contact img {
-            @include portrait;
-          }
         }
 
     %script(src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js")

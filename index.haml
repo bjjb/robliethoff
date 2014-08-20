@@ -61,6 +61,10 @@
           list-style: circle;
         }
 
+        a {
+          color: rgb(47, 47, 151);
+        }
+
         header {
           a {
             display: block;
@@ -178,8 +182,9 @@
   %body
     %header#top
       %a(href='#home')
-        %h1 Rob Liethoff
-        %h2 Voice and Movement Training
+        :markdown
+          # Rob Liethoff
+          ## Voice & Movement Training
 
     %nav#nav
       %ul

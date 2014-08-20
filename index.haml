@@ -36,7 +36,7 @@
         @import 'lib/skeleton.css';
         @import 'lib/reset';
 
-        html { height: 100%; }
+        html { height: 100%; padding-bottom: 2em; }
         body {
           height: 100%;
           font-family: 'Arvo', serif;
@@ -55,6 +55,10 @@
           margin-top: golden-ratio(1em, 2);
           margin-bottom: golden-ratio(1em, 2);
           text-align: justify;
+        }
+
+        ul {
+          list-style: circle;
         }
 
         header {
@@ -114,6 +118,17 @@
           }
         }
         #voice { } 
+        #links {
+          ul {
+            li {
+              padding: 0.5em 0;
+              a {
+                font-size: 120%;
+                text-decoration: none;
+              }
+            }
+          }
+        }
         section {
           border-top: 1px dotted #ccc;
           h1 {
@@ -142,6 +157,16 @@
           section {
             &:target { color: inherit; }
             &:hover { color: #666; }
+          }
+
+          @mixin portrait {
+            max-width: 50%;
+            display: block;
+            margin: auto;
+          }
+
+          #contact img {
+            @include portrait;
           }
         }
 
@@ -236,8 +261,21 @@
         :markdown
           # Collaboration
 
-          Coming soon...
+          ## "Home"
 
+          _Collaboration with sound designer & DJ, John Connell_
+
+          _Home or Coherence_ is a collective listening experience that invites
+          you to work with the intelligence within the body at a fundamental
+          level, that lets the intelligence of the body (its natural state of
+          clarity and calm alertness) speak for itself.  Using guided
+          meditation, movement propositions (addressing physical matter and
+          space within the body) and sound design, participants explore
+          different qualities of sensorial bodily awareness, encouraging an
+          intuitive way of sensing and moving on a personal and collective
+          level. 
+
+          _...more to follow..._
 
       %section#contact
         :markdown
@@ -248,3 +286,24 @@
           ![Rob Liethof](img/rliethoff.jpg)
 
           [Curriculum Vitae](/cv.pdf)
+          
+      %section#links
+        :markdown
+          # Links
+
+          ## Training & Teaching
+
+          * [Lichtenberger Institute](http://www.lichtenberger-institut.de/) applied physiology of the voice
+          * [Smahs Intensive Berlin](http://www.smash-berlin.com/) program of experimental physical performance
+          * [Klein Technique Berlin](http://www.hannahegenscheidt.de/) with Hanna Hegenscheidt
+          * [Universität der Künste Berlin](http://www.udk-berlin.de/sites/gesang/) voice and opera
+          * [Die Somatische Akademie Berlin](http://www.somatische-akademie.de/) 
+          * [Escuela nacional arte teatral](http://www.enat.bellasartes.gob.mx/) acting academy in Mexico City
+          * [Tanzfabrik Berlin](http://www.tanzfabrik-berlin.de/) centre for contemporary dance in Berlin
+          * [Acting Studio](http://www.acteerstudio.org/) acting school in The Hague (The Netherlands)
+          * [Voice Learning Centre](http://www.voicelearningcentre.nl/) (Lichtenberger method) - Ingrid Voermans -
+
+          ## Collaboration
+
+          * [4DSOUND](http://4dsound.net/) - moving sound images -
+          * [Florence To](http://florence-to.com/) - visual installation artist -
